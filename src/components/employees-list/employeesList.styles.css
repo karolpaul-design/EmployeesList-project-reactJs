@@ -1,0 +1,15 @@
+.list__wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.title{
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .list__wrapper{
+      
+        grid-template-columns: 1fr ;
+    }
+  }
