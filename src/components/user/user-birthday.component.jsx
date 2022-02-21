@@ -13,13 +13,14 @@ function UserBirthday(props) {
     "November",
     "December",
   ];
-  const date = new Date(Date.parse(props.userArr[3])).getDate();
-  const month = months[new Date(Date.parse(props.userArr[3])).getMonth()];
-  const year = new Date(Date.parse(props.userArr[3])).getFullYear();
+  const date = new Date(Date.parse(props.userObj.dob)).getDate();
+  const month = months[new Date(Date.parse(props.userObj.dob)).getMonth()];
+  const year = new Date(Date.parse(props.userObj.dob)).getFullYear();
 
   return (
     <li>
-      {props.userArr[0]} {props.userArr[1]} - {date} {month}, {year} year
+      {props.userObj.lastName} {props.userObj.firstName} - {date} {month},{" "}
+      {year} year
     </li>
   );
 }

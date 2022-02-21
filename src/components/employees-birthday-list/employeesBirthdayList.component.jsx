@@ -2,12 +2,12 @@ import React from "react";
 
 import Month from "../month/month.component";
 
-function EmployeesBirthday(props) {
+function EmployeesBirthday() {
   return (
     <div className="employees-birthday__wrapper">
       <h1 className="title">Empoyees birthday</h1>
       <hr />
-      <Month activeUsers={props.activeUsers} />
+      <Month />
     </div>
   );
 }

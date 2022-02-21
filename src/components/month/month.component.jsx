@@ -1,7 +1,9 @@
 import React from "react";
 import UserBirthday from "../user/user-birthday.component";
+import uniqid from "uniqid";
+import { useSelector } from "react-redux";
 
-function Month(props) {
+function Month() {
   const monthsList = [
     "January",
     "February",
@@ -25,24 +27,27 @@ function Month(props) {
     June: [],
     July: [],
     August: [],
+    September: [],
     October: [],
     November: [],
     December: [],
   };
 
+  const activeUsers = useSelector((state) => {
+    const { activeUsers } = state;
+    return activeUsers.activeUsers;
+  });
+
   return (
     <div>
       {Object.entries(months).map((monthObj) => {
-        {
-          /* debugger; */
-        }
         let month = monthObj[0];
         let actives = [];
-        props.activeUsers.forEach((userArr) => {
+        activeUsers.forEach((userObj) => {
           if (
-            month === monthsList[new Date(Date.parse(userArr[3])).getMonth()]
+            month === monthsList[new Date(Date.parse(userObj.dob)).getMonth()]
           ) {
-            actives.push(userArr);
+            actives.push(userObj);
           }
 
           months[month] = actives;
@@ -50,17 +55,17 @@ function Month(props) {
 
         if (months[month].length > 0) {
           return (
-            <div>
+            <div key={uniqid()}>
               <h3>{month}</h3>
               <ul>
-                {months[month].map((userArr) => (
-                  <li>
-                    <UserBirthday userArr={userArr} />
-                  </li>
+                {months[month].map((userObj) => (
+                  <UserBirthday key={userObj.id} userObj={userObj} />
                 ))}
               </ul>
             </div>
           );
+        } else {
+          return null;
         }
       })}
     </div>

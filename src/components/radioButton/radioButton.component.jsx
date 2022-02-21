@@ -1,45 +1,70 @@
-function RadioButton(props) {
-  const handleOnclick = (isActive) => {
-    if (props.colored) {
-      props.setColored(false);
-      let filteredActiveUsers = props.activeUsers.filter(
-        (user) => user[2] !== props.user[2]
+import { setActiveUsers } from "../../redux/activeUsers/activeUsers.action";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+function RadioButton({ setColored, user, colored }) {
+  const activeUsers = useSelector((state) => {
+    const { activeUsers } = state;
+    return activeUsers.activeUsers;
+  });
+
+  const dispatch = useDispatch();
+
+  const handleOnclick = (e) => {
+    if (e.target.value === "notActive") {
+      setColored(false);
+      let filteredActiveUsers = activeUsers.filter(
+        (userData) => userData.id !== user.id
       );
-      props.setStateOfParent(filteredActiveUsers);
-    } else {
-      props.setColored(true);
-      props.activeUsers.push(props.user);
-      props.setStateOfParent(props.activeUsers);
+      localStorage.setItem("activeUsers", JSON.stringify(filteredActiveUsers));
+      dispatch(setActiveUsers(filteredActiveUsers));
+    } else if (e.target.value === "active") {
+      setColored(true);
+
+      let updatedActiveUsers = [...activeUsers, user];
+      localStorage.setItem("activeUsers", JSON.stringify(updatedActiveUsers));
+      dispatch(setActiveUsers(updatedActiveUsers));
     }
   };
 
-  return (
-    <div>
-      <input
-        onClick={handleOnclick}
-        type="radio"
-        id={props.user[2]}
-        name={props.user[2]}
-        value="notActive"
-        defaultChecked
-      >
-        {}
-      </input>
+  const sort = (activeUsers) => {
+    activeUsers.forEach((users) => {
+      if (users.id === user.id) {
+        setColored(true);
+        return;
+      }
+    });
+  };
+  useEffect(() => {
+    sort(activeUsers);
+  });
 
-      <label for={""}>not active</label>
+  return (
+    <span>
+      <br></br>
+      <input
+        onChange={handleOnclick}
+        type="radio"
+        id={user.id}
+        name={user.lastName}
+        value="notActive"
+        checked={!colored}
+      ></input>
+
+      <label>not active</label>
 
       <br></br>
 
       <input
-        onClick={handleOnclick}
+        onChange={handleOnclick}
         type="radio"
-        id={props.user[2]}
-        name={props.user[2]}
+        id={user.id}
+        name={user.lastName}
         value="active"
+        checked={colored}
       ></input>
 
-      <label for={""}>active</label>
-    </div>
+      <label>active</label>
+    </span>
   );
 }
 

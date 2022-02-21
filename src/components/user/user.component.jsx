@@ -1,7 +1,7 @@
 import { useState } from "react";
 import RadioButton from "../radioButton/radioButton.component";
 
-function User(props) {
+function User({ userObj }) {
   const [colored, setColored] = useState(false);
 
   const styles = {
@@ -10,14 +10,11 @@ function User(props) {
 
   return (
     <p>
-      <span style={styles}>{`${props.userArr[0]} ${props.userArr[1]}`}</span>
-
+      <span style={styles}>{`${userObj.lastName} ${userObj.firstName}`}</span>
       <RadioButton
         setColored={setColored}
-        user={props.userArr}
-        activeUsers={props.activeUsers}
+        user={userObj}
         colored={colored}
-        setStateOfParent={props.setStateOfParent}
       ></RadioButton>
     </p>
   );
