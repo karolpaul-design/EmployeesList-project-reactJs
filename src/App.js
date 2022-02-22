@@ -13,7 +13,6 @@ const App = () => {
         ? localStorage.getItem("activeUsers")
         : [];
       let data = JSON.parse(usersStore);
-      console.log(data);
       dispatch(setActiveUsers(data));
     }
   });
