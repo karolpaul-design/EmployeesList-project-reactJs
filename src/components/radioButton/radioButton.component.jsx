@@ -1,6 +1,7 @@
 import { setActiveUsers } from "../../redux/activeUsers/activeUsers.action";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
+
 function RadioButton({ setColored, user, colored }) {
   const activeUsers = useSelector((state) => {
     const { activeUsers } = state;
@@ -19,7 +20,6 @@ function RadioButton({ setColored, user, colored }) {
       dispatch(setActiveUsers(filteredActiveUsers));
     } else if (e.target.value === "active") {
       setColored(true);
-
       let updatedActiveUsers = [...activeUsers, user];
       localStorage.setItem("activeUsers", JSON.stringify(updatedActiveUsers));
       dispatch(setActiveUsers(updatedActiveUsers));
@@ -34,7 +34,11 @@ function RadioButton({ setColored, user, colored }) {
       }
     });
   };
+
   useEffect(() => {
+    if (!activeUsers.length) {
+      setColored(false);
+    }
     sort(activeUsers);
   });
 

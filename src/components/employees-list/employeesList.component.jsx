@@ -37,10 +37,11 @@ function EmployeesList() {
   };
 
   return (
-    <div>
-      <h1 className="title">Empoyees</h1>
-      <hr />
-
+    <div className="wrap">
+      <div>
+        <h1 className="title">Empoyees</h1>
+        <hr />
+      </div>
       <div className="list__wrapper">
         {alphabet.map((letter) => (
           <div key={uniqid()}>
