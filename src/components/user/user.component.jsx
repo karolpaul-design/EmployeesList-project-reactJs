@@ -5,7 +5,7 @@ function User({ userObj }) {
   const [colored, setColored] = useState(false);
 
   const styles = {
-    color: colored ? "blue" : "black",
+    color: colored ? "#fb00ff" : "#0ccac4",
   };
 
   return (

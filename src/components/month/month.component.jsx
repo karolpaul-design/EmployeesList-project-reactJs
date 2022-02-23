@@ -1,5 +1,5 @@
 import React from "react";
-import UserBirthday from "../user/user-birthday.component";
+import UserBirthday from "../user-birthday/user-birthday.component";
 import uniqid from "uniqid";
 import { useSelector } from "react-redux";
 

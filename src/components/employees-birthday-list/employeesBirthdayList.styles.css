@@ -1,3 +1,42 @@
 .title{
     text-align: center;
 }
+.employees-birthday__wrapper{
+    width: 100%;
+
+}
+  button {
+      width: 150px;
+      height: 50px;
+      cursor: pointer;
+      border: none;
+   
+      background-color: #7f5a83;
+      background-image: linear-gradient(315deg, #ebd2ee 0%, #a70e9f 74%);
+      background-size: 200% 100%;
+      background-position: left;
+      background-repeat: no-repeat;
+      transition: 500ms;
+      color: rgb(255, 255, 255);
+      font-size: 16px;
+      border-radius: 30px;
+      font-family: 'Gideon Roman';
+  }
+  
+
+  
+  button:hover {
+      background-position: right;
+      font-family: 'Gideon Roman';
+  }
+  
+
+  
+  button:focus {
+      outline: none;
+  }
+  @media only screen and (max-width: 700px) {
+    .employees-birthday__wrapper{
+        width: 50%;
+    }
+  }

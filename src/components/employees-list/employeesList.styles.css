@@ -2,19 +2,34 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     overflow-y: scroll;
-   
+   width: 520px;
     height: 89%;
+    
 }
 .wrap{
     height: 100vh;
+    
 }
 .title{
     text-align: center;
    
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
     .list__wrapper{
+     
+       width: 465px;
+       
+    }
+  }
+
+
+@media only screen and (max-width: 700px) {
+    .wrap{
+        width:50%;
+    }
+    .list__wrapper{
+        width:unset;
       
         grid-template-columns: 1fr ;
     }
