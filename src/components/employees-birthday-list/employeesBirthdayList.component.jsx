@@ -34,10 +34,12 @@ function EmployeesBirthday() {
     <div className="employees-birthday__wrapper">
       <h1 className="title">Empoyees birthday</h1>
       <hr />
-      <Month />
-      <button onClick={handleClick} hidden={buttonVisibility}>
-        Clear
-      </button>
+      <div className="birthday-list__wrapper">
+        <Month />
+        <button onClick={handleClick} hidden={buttonVisibility}>
+          Clear
+        </button>
+      </div>
     </div>
   );
 }

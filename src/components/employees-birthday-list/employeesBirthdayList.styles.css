@@ -3,7 +3,13 @@
 }
 .employees-birthday__wrapper{
     width: 100%;
+    height: 100vh;
 
+}
+.birthday-list__wrapper{
+    overflow-y: auto;
+   
+     height: 85%;
 }
   button {
       width: 150px;
