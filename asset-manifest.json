@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/EmployeesList-project-reactJs/static/css/main.fc0217c2.css",
-    "main.js": "/EmployeesList-project-reactJs/static/js/main.05806531.js",
+    "main.css": "/EmployeesList-project-reactJs/static/css/main.8121824e.css",
+    "main.js": "/EmployeesList-project-reactJs/static/js/main.2a2b3fc7.js",
     "static/js/787.cfd8f164.chunk.js": "/EmployeesList-project-reactJs/static/js/787.cfd8f164.chunk.js",
     "static/media/loader.gif": "/EmployeesList-project-reactJs/static/media/loader.155fa329f0212a6b0ca0.gif",
     "index.html": "/EmployeesList-project-reactJs/index.html",
-    "main.fc0217c2.css.map": "/EmployeesList-project-reactJs/static/css/main.fc0217c2.css.map",
-    "main.05806531.js.map": "/EmployeesList-project-reactJs/static/js/main.05806531.js.map",
+    "main.8121824e.css.map": "/EmployeesList-project-reactJs/static/css/main.8121824e.css.map",
+    "main.2a2b3fc7.js.map": "/EmployeesList-project-reactJs/static/js/main.2a2b3fc7.js.map",
     "787.cfd8f164.chunk.js.map": "/EmployeesList-project-reactJs/static/js/787.cfd8f164.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fc0217c2.css",
-    "static/js/main.05806531.js"
+    "static/css/main.8121824e.css",
+    "static/js/main.2a2b3fc7.js"
   ]
 }
